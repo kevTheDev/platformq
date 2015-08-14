@@ -9,11 +9,12 @@ class Admin::ArticlesController < Admin::BaseController
   end
   
   def create
-    @article = Article.new(article_params)
+    creator = Articles::Create.new(article_params)
     
-    if @article.save
+    if creator.create
       redirect_to(admin_articles_path, notice: 'Article Created')
     else
+      @article = creator.article
       render action: 'new'
     end
   end
