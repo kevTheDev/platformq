@@ -10,12 +10,14 @@ describe SubscriberNotificationWorker do
     
     let(:worker) { described_class.new }
     
+    let(:subscriber) { create(:subscriber) }
+    
     before do
       NotificationMailer.stub(:new_article_notification) { notification_mailer }
     end
     
     it 'should send notification emails to all the subscribers' do
-      expect(NotificationMailer).to receive(:new_article_notification).with(article)
+      expect(NotificationMailer).to receive(:new_article_notification).with(article, subscriber.email)
       worker.perform(article.id)
     end
     

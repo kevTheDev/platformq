@@ -10,6 +10,13 @@ class SubscribersController < ApplicationController
     end
   end
   
+  def destroy
+    subscriber = Subscriber.find_by_email(params[:email])
+    subscriber.destroy
+    
+    redirect_to articles_path, notice: 'You have been unsubscribed'
+  end
+  
   private
   
   def subscriber_params

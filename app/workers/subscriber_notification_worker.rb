@@ -5,7 +5,9 @@ class SubscriberNotificationWorker
   def perform(article_slug)
     article = Article.friendly.find(article_slug)
     
-    NotificationMailer.new_article_notification(article).deliver
+    Subscriber.pluck('email').each do |email|
+      NotificationMailer.new_article_notification(article, email).deliver
+    end
   end
   
 end

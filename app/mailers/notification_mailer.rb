@@ -4,11 +4,11 @@ class NotificationMailer < ActionMailer::Base
       { host: 'http://localhost:3000' }
     end
   
-  def new_article_notification(article)
-    emails = Subscriber.pluck('email')
+  def new_article_notification(article, email)
     @article = article
+    @email   = email
     
-    mail(to: emails)
+    mail(to: email)
   end
   
 end

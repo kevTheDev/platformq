@@ -4,4 +4,4 @@
 
 <p>You can <%= link_to 'read the full article here', article_url(@article) %>
   
-<p>Also need the UNSUBSCRIBE LINK HERE</p>
+<p><%= link_to 'Unsubscribe', unsubscribe_url(email: @email) %></p>

@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   
   resources :subscribers, only: [:create]
   
+  get 'unsubscribe', to: 'subscribers#unsubscribe', as: :unsubscribe
+  
   root to: 'articles#index'
 end
