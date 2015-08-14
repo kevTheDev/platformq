@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
   
   def create
-    article = Article.find(params[:article_id])
-    comment = Comment.new(comment_params)
+    article = Article.friendly.find(params[:article_id])
+    comment = article.comments.new(comment_params)
     
     if comment.save
       redirect_to(article_path(article), notice: 'Thanks for the comment!')
