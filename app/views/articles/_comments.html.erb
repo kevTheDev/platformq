@@ -1,0 +1,12 @@
+<ul>
+  <% article.comments.each do |comment| %>
+    <li>
+      <%= comment.body %> posted at <%= comment.created_at %>
+    </li>
+  <% end %>
+</ul>
+
+<%= simple_form_for Comment.new, url: article_comments_path(article) do |f| %>
+  <%= f.input :body %>
+  <%= f.submit %>
+<% end %>

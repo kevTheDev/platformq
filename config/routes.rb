@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     resources :articles, except: :show
   end
   
-  resources :articles, only: [:index, :show]
+  resources :articles, only: [:index, :show] do
+    resources :comments, only: [:create], controller: 'comments'
+  end
   
   resources :subscribers, only: [:create]
   
