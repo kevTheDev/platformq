@@ -28,6 +28,8 @@ gem 'twitter-bootstrap-rails', '~> 3.2.0'
 
 gem 'friendly_id', '~> 5.1.0'
 
+gem 'simple_form', '~> 3.1.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -40,6 +42,9 @@ gem 'friendly_id', '~> 5.1.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  
+  gem 'factory_girl_rails', '~> 4.5.0'
+  gem 'database_cleaner', '~> 1.4.1'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
