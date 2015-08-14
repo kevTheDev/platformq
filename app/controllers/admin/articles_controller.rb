@@ -34,6 +34,10 @@ class Admin::ArticlesController < Admin::BaseController
   end
   
   def destroy
+    @article = Article.friendly.find(params[:id])
+    @article.destroy
+    
+    redirect_to(admin_articles_path, notice: 'Article Deleted')
   end
   
   private
