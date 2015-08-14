@@ -1,5 +1,5 @@
 <ul>
-  <% article.comments.each do |comment| %>
+<% @comments.each do |comment| %>
     <li>
       <%= comment.body %> posted at <%= comment.created_at %>
     </li>
@@ -10,3 +10,5 @@
   <%= f.input :body %>
   <%= f.submit %>
 <% end %>
+
+<%= paginate @comments %>

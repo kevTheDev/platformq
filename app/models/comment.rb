@@ -5,4 +5,6 @@ class Comment < ActiveRecord::Base
   validates :article, presence: true
   validates :body,    presence: true
   
+  paginates_per 10
+  
 end
