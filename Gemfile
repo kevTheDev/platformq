@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'twitter-bootstrap-rails', '~> 3.2.0'
 
+gem 'friendly_id', '~> 5.1.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -46,4 +48,6 @@ group :development, :test do
   gem 'spring'
 
   gem 'rspec-rails', '~> 3.3.3'
+  
+  gem 'shoulda-matchers', '~> 2.8.0'
 end
