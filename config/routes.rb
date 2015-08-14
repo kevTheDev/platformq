@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   end
   
   resources :articles, only: [:index, :show]
+  
+  root to: 'articles#index'
 end

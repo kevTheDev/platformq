@@ -11,7 +11,7 @@
   </thead>
   <% @articles.each do |article| %>
     <tr>
-      <td><%= link_to article.title, article_path %></td>
+      <td><%= link_to article.title, article_path(article) %></td>
       <td><%= article.created_at %></td>
     </tr>
   <% end %>
